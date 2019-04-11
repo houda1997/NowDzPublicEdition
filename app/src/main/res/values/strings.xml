@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NowDz</string>
+    <string name="nom_app">DZ Now</string>
+    <string name="titre_news">Ou va l\'algerie comme sa ? y a t\'il des solution</string>
+    <string name="entete_selection_jour">Selection du jour pour ISLEM</string>
+    <string name="entete_articlejour">Top 5 des article de moment</string>
 </resources>
