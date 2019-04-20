@@ -14,7 +14,7 @@ import com.example.nowdz.R
 
 
 class AcuilleFragment : Fragment() {
-    private val newsList = ArrayList<String>()
+    private val list = ArrayList<String>()
     private var newsRecyclerView: RecyclerView? = null
     private var newsAdapter: NewAdapter? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -27,16 +27,16 @@ class AcuilleFragment : Fragment() {
 
     private fun initRvNews(v: View){
         newsRecyclerView = v.findViewById(R.id.recycle_news_acuille)
-        newsAdapter = NewAdapter(newsList,v.context)
+        newsAdapter = NewAdapter(list,v.context)
         val horizontalLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         newsRecyclerView!!.layoutManager = horizontalLayoutManager
         newsRecyclerView!!.adapter = newsAdapter
     }
     private fun ajouterNews(){
-        newsList.add("a")
-        newsList.add("a")
-        newsList.add("a")
-        newsList.add("a")
+        list.add("a")
+        list.add("a")
+        list.add("a")
+        list.add("a")
         newsAdapter!!.notifyDataSetChanged()
     }
 }

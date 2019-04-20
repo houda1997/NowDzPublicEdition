@@ -11,14 +11,13 @@ import android.view.LayoutInflater
 
 import android.view.View
 import com.example.nowdz.R
+import com.example.nowdz.helper.RecycleViewHelper
 
 
 class TitlePagerAdapter : PagerAdapter() {
-    private val newsList = ArrayList<String>()
+    private val list = ArrayList<String>()
     private var newsRecyclerView: RecyclerView? = null
     private var newsAdapter: NewAdapter? = null
-
-
     private var mItems: List<String> = ArrayList()
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
@@ -55,17 +54,17 @@ class TitlePagerAdapter : PagerAdapter() {
     }
     private fun initRvNews(v: View){
         newsRecyclerView = v.findViewById(R.id.title_content_rv)
-        newsAdapter = NewAdapter(newsList,v.context)
+        newsAdapter = NewAdapter(list,v.context)
         val horizontalLayoutManager = LinearLayoutManager(v.context, LinearLayoutManager.VERTICAL, false)
         newsRecyclerView!!.layoutManager = horizontalLayoutManager
         newsRecyclerView!!.adapter = newsAdapter
     }
     private fun ajouterNews(){
-        newsList.clear()
-        newsList.add("a")
-        newsList.add("a")
-        newsList.add("a")
-        newsList.add("a")
+        list.clear()
+        list.add("a")
+        list.add("a")
+        list.add("a")
+        list.add("a")
         newsAdapter!!.notifyDataSetChanged()
     }
 }

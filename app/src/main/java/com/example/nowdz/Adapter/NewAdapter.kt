@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.example.nowdz.R
 
 class NewAdapter (
-    private val newsList: ArrayList<String>,
+    private val list: ArrayList<String>,
     internal var context: Context
 ) : RecyclerView.Adapter<NewAdapter.NewsViewHolder>() {
 
@@ -28,7 +28,7 @@ class NewAdapter (
     }
 
     override fun getItemCount(): Int {
-        return newsList.size
+        return list.size
     }
 
     inner class NewsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
