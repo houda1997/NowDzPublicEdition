@@ -1,17 +1,21 @@
 package com.example.nowdz
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatDelegate
 import android.support.v7.widget.Toolbar
+import android.view.Menu
+import android.view.MenuItem
 import com.example.nowdz.Fragment.AcuilleFragment
 import com.example.nowdz.Fragment.FavorisFragment
 import com.example.nowdz.Fragment.TitreFragement
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private var topToolbar :Toolbar? =null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,9 +45,11 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.item_accuille -> {
                     fragment = AcuilleFragment()
-                }
+             }
                 R.id.item_favoris -> {
+
                     fragment = FavorisFragment()
+
                 }
                 R.id.item_titre -> {
                     fragment = TitreFragement()
@@ -63,6 +69,17 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         return false
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.overflow_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.settings)
+            startActivity(Intent(this, SettingsActivity::class.java))
+
+        return super.onOptionsItemSelected(item)
     }
 
 }
