@@ -1,6 +1,8 @@
 package com.example.nowdz.Adapter
 
 import android.support.v4.view.PagerAdapter
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 
 import android.view.ViewGroup
 
@@ -12,12 +14,18 @@ import com.example.nowdz.R
 
 
 class TitlePagerAdapter : PagerAdapter() {
+    private val newsList = ArrayList<String>()
+    private var newsRecyclerView: RecyclerView? = null
+    private var newsAdapter: NewAdapter? = null
+
 
     private var mItems: List<String> = ArrayList()
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = LayoutInflater.from(container.context)
-            .inflate(R.layout.fragment_accuille, container, false)
+            .inflate(R.layout.inter_fragment_title, container, false)
+        initRvNews(view)
+        ajouterNews()
         container.addView(view)
         return view
     }
@@ -44,5 +52,20 @@ class TitlePagerAdapter : PagerAdapter() {
 
     fun addAll(items: List<String>) {
         mItems = ArrayList(items)
+    }
+    private fun initRvNews(v: View){
+        newsRecyclerView = v.findViewById(R.id.title_content_rv)
+        newsAdapter = NewAdapter(newsList,v.context)
+        val horizontalLayoutManager = LinearLayoutManager(v.context, LinearLayoutManager.VERTICAL, false)
+        newsRecyclerView!!.layoutManager = horizontalLayoutManager
+        newsRecyclerView!!.adapter = newsAdapter
+    }
+    private fun ajouterNews(){
+        newsList.clear()
+        newsList.add("a")
+        newsList.add("a")
+        newsList.add("a")
+        newsList.add("a")
+        newsAdapter!!.notifyDataSetChanged()
     }
 }
