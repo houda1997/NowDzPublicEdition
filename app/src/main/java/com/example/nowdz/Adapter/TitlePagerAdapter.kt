@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 
 import android.view.View
+import com.example.nowdz.Fragment.AcuilleFragment
 import com.example.nowdz.R
 import com.example.nowdz.helper.RecycleViewHelper
 
@@ -19,7 +20,7 @@ class TitlePagerAdapter : PagerAdapter() {
     private var newsRecyclerView: RecyclerView? = null
     private var newsAdapter: NewAdapter? = null
     private var mItems: List<String> = ArrayList()
-
+    private var web : AcuilleFragment.onWebView?=null
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = LayoutInflater.from(container.context)
             .inflate(R.layout.inter_fragment_title, container, false)
@@ -54,7 +55,7 @@ class TitlePagerAdapter : PagerAdapter() {
     }
     private fun initRvNews(v: View){
         newsRecyclerView = v.findViewById(R.id.title_content_rv)
-        newsAdapter = NewAdapter(list,v.context)
+        newsAdapter = NewAdapter(list,v.context,v,web)
         val horizontalLayoutManager = LinearLayoutManager(v.context, LinearLayoutManager.VERTICAL, false)
         newsRecyclerView!!.layoutManager = horizontalLayoutManager
         newsRecyclerView!!.adapter = newsAdapter
@@ -67,4 +68,6 @@ class TitlePagerAdapter : PagerAdapter() {
         list.add("a")
         newsAdapter!!.notifyDataSetChanged()
     }
+
+
 }

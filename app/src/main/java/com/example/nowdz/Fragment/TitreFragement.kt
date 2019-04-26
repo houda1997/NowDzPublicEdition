@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager
 import com.example.nowdz.Adapter.TitlePagerAdapter
 
 
+
 class TitreFragement : Fragment() {
     protected var mRecyclerTabLayout: RecyclerTabLayout? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

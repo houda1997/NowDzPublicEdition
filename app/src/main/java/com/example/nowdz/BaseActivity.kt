@@ -12,7 +12,6 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
         currentTheme = sharedPref.getString(KEY_CURRENT_THEME, LIGHT_THEME)
         setAppTheme(currentTheme)

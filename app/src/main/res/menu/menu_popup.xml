@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.resocoder.popupmenutut.MainActivity">
+
+<item
+        android:id="@+id/menu_popup_save"
+        android:title="enregistrer pour plus tard"
+        android:icon="@drawable/ic_save"/>
+<item
+        android:id="@+id/menu_popup_share"
+        android:title="Partager"
+        android:icon="@drawable/ic_share"/>
+<item
+        android:id="@+id/menu_popup_access"
+        android:title="Acceder à"
+        android:icon="@drawable/ic_access"/>
+<item
+        android:id="@+id/menu_popup_hide"
+        android:title="Masquer les articles"
+        android:icon="@drawable/ic_hide"/>
+
+</menu>
